@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kaya Property Service provides professional commercial cleaning across Melbourne, including office cleaning, shopping centre cleaning, childcare cleaning, steam cleaning, and pressure washing. Request a free quote today." />
+  <meta name="keywords" content="commercial cleaning Melbourne, office cleaning, shopping centre cleaning, childcare cleaning, steam cleaning, pressure washing, Kaya Property Service" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Kaya Property Service | Professional Commercial Cleaning" />
+  <meta property="og:description" content="Expert commercial cleaning services in Melbourne. Offices, shopping centres, childcare facilities, steam cleaning and pressure washing. Request a free quote." />
+  <meta property="og:type" content="website" />
+  <title>Kaya Property Service | Professional Commercial Cleaning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Formspree handled in contact form -->
+
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES
+    ============================================= */
+    :root {
+      --brown-deep:   #1A0F00;
+      --brown-mid:    #7A3800;
+      --brown-light:  #B05A1A;
+      --orange:       #E8650A;
+      --orange-hover: #C9540A;
+      --cream:        #F5F0EA;
+      --cream-dark:   #EDE5D8;
+      --white:        #FFFFFF;
+      --text-primary: #1A0F00;
+      --text-secondary: #5C3A1E;
+      --text-muted:   #9A7A60;
+      --border:       rgba(26,15,0,0.12);
+
+      --font-heading: 'DM Serif Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --max-width: 1120px;
+      --nav-h: 72px;
+      --radius: 6px;
+      --transition: 0.22s ease;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    ul { list-style: none; }
+
+    /* =============================================
+       SKIP LINK (accessibility)
+    ============================================= */
+    .skip-link {
+      position: absolute;
+      top: -999px;
+      left: 16px;
+      background: var(--orange);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      z-index: 9999;
+      font-family: var(--font-body);
+    }
+    .skip-link:focus { top: 16px; }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--brown-deep);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__inner {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo E - serif wordmark with sweep */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 0;
+    }
+
+    .logo__name {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: -0.3px;
+    }
+
+    .logo__sweep {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 3px;
+    }
+
+    .logo__line {
+      height: 2px;
+      width: 72px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    .logo__dot {
+      height: 2px;
+      width: 8px;
+      background: var(--orange);
+      border-radius: 2px;
+      opacity: 0.4;
+    }
+
+    .logo__sub {
+      font-family: var(--font-body);
+      font-size: 8.5px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav__link {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      transition: color var(--transition), background var(--transition);
+    }
+
+    .nav__link:hover,
+    .nav__link[aria-current="page"] {
+      color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav__cta {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--orange);
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      transition: background var(--transition);
+      margin-left: 8px;
+    }
+
+    .nav__cta:hover { background: var(--orange-hover); }
+
+    /* =============================================
+       PAGES (single-file SPA)
+    ============================================= */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      background: var(--brown-deep);
+      position: relative;
+      overflow: hidden;
+      padding: 96px 24px 80px;
+    }
+
+    /* Decorative background texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(232,101,10,0.13) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(122,56,0,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero__label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 4.5vw, 58px);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero__heading em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .hero__body {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 36px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: var(--radius);
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn--primary {
+      background: var(--orange);
+      color: var(--white);
+      border-color: var(--orange);
+    }
+    .btn--primary:hover {
+      background: var(--orange-hover);
+      border-color: var(--orange-hover);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn--outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* Hero image placeholder */
+    .hero__image {
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.3);
+      font-size: 13px;
+      font-family: var(--font-body);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(232,101,10,0.08) 0%, transparent 60%);
+    }
+
+    .placeholder-icon {
+      width: 48px;
+      height: 48px;
+      opacity: 0.25;
+    }
+
+    /* =============================================
+       STATS BAR
+    ============================================= */
+    .stats {
+      background: var(--orange);
+      padding: 28px 24px;
+    }
+
+    .stats__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat__number {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat__label {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 1px;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    /* =============================================
+       ABOUT STRIP
+    ============================================= */
+    .about {
+      padding: 80px 24px;
+      background: var(--cream);
+    }
+
+    .about__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about__image {
+      aspect-ratio: 5/4;
+      background: var(--cream-dark);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.15;
+      color: var(--brown-deep);
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .about__checks {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .about__check {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      padding-left: 14px;
+      border-left: 3px solid var(--orange);
+    }
+
+    /* =============================================
+       SERVICES
+    ============================================= */
+    .services {
+      padding: 80px 24px;
+      background: var(--brown-deep);
+    }
+
+    .services__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .services__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .services__header .section-heading { color: var(--white); }
+    .services__header .section-body { color: rgba(255,255,255,0.6); max-width: 560px; margin: 0 auto; }
+
+    /*
+     * SERVICE CARDS - easily add/remove services below.
+     * Each card follows the same .service-card structure.
+     */
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 32px 28px;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .service-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(232,101,10,0.35);
+      transform: translateY(-3px);
+    }
+
+    .service-card__title {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .service-card__desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       PROCESS
+    ============================================= */
+    .process {
+      padding: 80px 24px;
+      background: var(--cream);
+    }
+
+    .process__inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .process__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .process__steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+
+    .process__steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.66% + 28px);
+      right: calc(16.66% + 28px);
+      height: 1px;
+      background: var(--border);
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .step__num {
+      width: 56px;
+      height: 56px;
+      background: var(--orange);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step__title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--brown-deep);
+      margin-bottom: 10px;
+    }
+
+    .step__desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       CTA BANNER
+    ============================================= */
+    .cta-banner {
+      background: var(--orange);
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .cta-banner__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 3.5vw, 44px);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .cta-banner__body {
+      font-size: 16px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 32px;
+    }
+
+    .btn--dark {
+      background: var(--brown-deep);
+      color: var(--white);
+      border-color: var(--brown-deep);
+    }
+    .btn--dark:hover {
+      background: #2E1A00;
+      border-color: #2E1A00;
+    }
+
+    /* =============================================
+       CONTACT PAGE
+    ============================================= */
+    .contact-hero {
+      background: var(--brown-deep);
+      padding: 72px 24px 64px;
+      text-align: center;
+    }
+
+    .contact-hero__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .contact-hero__body {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-section {
+      padding: 72px 24px 96px;
+      background: var(--cream);
+    }
+
+    .contact-section__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info__heading {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      color: var(--brown-deep);
+      margin-bottom: 24px;
+    }
+
+    .contact-info__items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-info__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-info__label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .contact-info__value {
+      font-size: 15px;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .contact-info__value a {
+      color: var(--brown-mid);
+      transition: color var(--transition);
+    }
+    .contact-info__value a:hover { color: var(--orange); }
+
+    .contact-info__abn {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Form */
+    .form-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+    }
+
+    .form-card__heading {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      color: var(--brown-deep);
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 7px;
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text-primary);
+      background: var(--cream);
+      border: 1.5px solid var(--cream-dark);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      transition: border-color var(--transition), background var(--transition);
+      appearance: none;
+      outline: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237A3800' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      background: var(--white);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      width: 100%;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--orange);
+      border: none;
+      border-radius: var(--radius);
+      padding: 14px 24px;
+      cursor: pointer;
+      transition: background var(--transition);
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--orange-hover); }
+
+    .form-notice {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    #form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0 16px;
+    }
+    #form-success .success-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(232,101,10,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    #form-success .success-icon svg { width: 24px; height: 24px; stroke: var(--orange); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    #form-success h3 { font-family: var(--font-heading); font-size: 22px; color: var(--brown-deep); margin-bottom: 8px; }
+    #form-success p { font-size: 14px; color: var(--text-secondary); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--brown-deep);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer__logo { margin-bottom: 20px; display: inline-block; }
+
+    .footer__links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer__link {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+    .footer__link:hover { color: var(--white); }
+
+    .footer__contact {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .footer__contact-item {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer__contact-item a {
+      color: rgba(255,255,255,0.55);
+      transition: color var(--transition);
+    }
+    .footer__contact-item a:hover { color: var(--white); }
+
+    .footer__divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 20px auto;
+    }
+
+    .footer__copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer__powered {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      margin-top: 6px;
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero__image { display: none; }
+      .about__inner { grid-template-columns: 1fr; gap: 40px; }
+      .about__image { display: none; }
+      .services__grid { grid-template-columns: 1fr 1fr; }
+      .process__steps { grid-template-columns: 1fr; }
+      .process__steps::before { display: none; }
+      .stats__inner { grid-template-columns: 1fr; gap: 16px; }
+      .contact-section__inner { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .services__grid { grid-template-columns: 1fr; }
+      .nav__link { display: none; }
+      .hero { padding: 64px 20px 56px; }
+      .form-card { padding: 28px 20px; }
+    }
+
+
+  </style>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kaya Property Service",
+    "description": "Professional commercial cleaning services including office cleaning, shopping centre cleaning, childcare cleaning, steam cleaning and pressure washing.",
+    "telephone": "+61430231403",
+    "email": "kayapropertyservice@yahoo.com",
+    "areaServed": "AU",
+    "priceRange": "Contact for quote",
+    "serviceType": [
+      "Commercial Cleaning",
+      "Office Cleaning",
+      "Shopping Centre Cleaning",
+      "Childcare Cleaning",
+      "Steam Cleaning",
+      "Pressure Washing"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =============================================
+       NAVIGATION
+  ============================================= -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="footer__logo" onclick="showPage('home')" aria-label="Kaya Property Service - Home">
+        <div class="logo" aria-hidden="true">
+          <span class="logo__name">KAYA</span>
+          <div class="logo__sweep">
+            <div class="logo__line"></div>
+            <div class="logo__dot"></div>
+          </div>
+          <span class="logo__sub">Property Service</span>
+        </div>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li>
+          <a href="#" class="nav__link" id="nav-home" aria-current="page"
+             onclick="showPage('home'); return false;">Home</a>
+        </li>
+        <li>
+          <a href="#" class="nav__cta" id="nav-contact" onclick="showPage('contact'); return false;" aria-label="Request a free quote">Get a Quote</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HOME PAGE
+  ============================================= -->
+  <main id="main-content">
+    <div id="page-home" class="page active">
+
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <p class="hero__label">Commercial Cleaning Specialists</p>
+            <h1 class="hero__heading" id="hero-heading">
+              A cleaner space,<br><em>every time.</em>
+            </h1>
+            <p class="hero__body">
+              Kaya Property Service delivers professional, reliable cleaning for businesses across Australia. From offices and shopping centres to childcare facilities, we take pride in every detail.
+            </p>
+            <div class="hero__actions">
+              <a href="#" class="btn btn--primary" onclick="showPage('contact'); return false;">Request a Free Quote</a>
+              <a href="#services" class="btn btn--outline" onclick="setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}),10); return false;">Our Services</a>
+            </div>
+          </div>
+          <div class="hero__image" role="img" aria-label="Commercial cleaning in action - placeholder for hero image">
+            <svg class="placeholder-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 34l10-10 6 6 8-10 12 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Hero image placeholder</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats bar -->
+      <section class="stats" aria-label="Business highlights">
+        <div class="stats__inner">
+          <div>
+            <p class="stat__number">500+</p>
+            <p class="stat__label">Sites Cleaned</p>
+          </div>
+          <div>
+            <p class="stat__number">6</p>
+            <p class="stat__label">Specialist Services</p>
+          </div>
+          <div>
+            <p class="stat__number">100%</p>
+            <p class="stat__label">Satisfaction Focus</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="about" aria-labelledby="about-heading">
+        <div class="about__inner">
+          <div class="about__image" role="img" aria-label="Kaya Property Service team - placeholder for about image">
+            <svg class="placeholder-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:48px;height:48px;opacity:0.3">
+              <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="18" cy="18" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 34l10-10 6 6 8-10 12 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-size:13px;color:var(--text-muted)">About image placeholder</span>
+          </div>
+          <div>
+            <p class="section-label">Who We Are</p>
+            <h2 class="section-heading" id="about-heading">Built on reliability and attention to detail</h2>
+            <p class="section-body">
+              Kaya Property Service was founded on a simple principle: every business deserves a clean, healthy environment. We work with clients across a wide range of industries, providing consistent, professional results that let you focus on running your business.
+            </p>
+            <p class="section-body" style="margin-top: 14px;">
+              All work is quoted individually so you only pay for exactly what you need. No lock-in contracts, no hidden fees.
+            </p>
+            <ul class="about__checks" aria-label="Key benefits">
+              <li class="about__check">Fully insured and professionally trained staff</li>
+              <li class="about__check">Flexible scheduling to suit your operations</li>
+              <li class="about__check">Customised cleaning plans, no one-size-fits-all</li>
+              <li class="about__check">Free, no-obligation quotes for all enquiries</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <!--
+        SERVICES SECTION
+        To add a service: copy one .service-card block and update the title and description.
+        To remove a service: delete the relevant .service-card block.
+      -->
+      <section class="services" id="services" aria-labelledby="services-heading">
+        <div class="services__inner">
+          <div class="services__header">
+            <p class="section-label" style="color: var(--orange);">What We Do</p>
+            <h2 class="section-heading" id="services-heading">Our services</h2>
+            <p class="section-body">Specialist cleaning across a range of commercial environments. All services are quoted individually.</p>
+          </div>
+
+          <ul class="services__grid" role="list">
+
+            <!-- SERVICE: Commercial Cleaning -->
+            <li class="service-card">
+              <h3 class="service-card__title">Commercial Cleaning</h3>
+              <p class="service-card__desc">Comprehensive cleaning solutions for commercial properties of all sizes. We maintain high standards consistently across every visit.</p>
+            </li>
+
+            <!-- SERVICE: Office Cleaning -->
+            <li class="service-card">
+              <h3 class="service-card__title">Office Cleaning</h3>
+              <p class="service-card__desc">A clean, organised office improves productivity and leaves a lasting impression on clients. We work around your hours to minimise disruption.</p>
+            </li>
+
+            <!-- SERVICE: Shopping Centre Cleaning -->
+            <li class="service-card">
+              <h3 class="service-card__title">Shopping Centre Cleaning</h3>
+              <p class="service-card__desc">High-traffic retail environments demand reliable, thorough cleaning. We handle common areas, amenities, and retail spaces with care.</p>
+            </li>
+
+            <!-- SERVICE: Childcare Cleaning -->
+            <li class="service-card">
+              <h3 class="service-card__title">Childcare Cleaning</h3>
+              <p class="service-card__desc">Safe, child-friendly cleaning products and rigorous hygiene standards to protect the health of children and staff in care environments.</p>
+            </li>
+
+            <!-- SERVICE: Steam Cleaning -->
+            <li class="service-card">
+              <h3 class="service-card__title">Steam Cleaning</h3>
+              <p class="service-card__desc">Deep-penetrating steam cleaning for carpets, upholstery, and hard surfaces. Removes embedded dirt, bacteria, and allergens without harsh chemicals.</p>
+            </li>
+
+            <!-- SERVICE: Pressure Wash -->
+            <li class="service-card">
+              <h3 class="service-card__title">Pressure Washing</h3>
+              <p class="service-card__desc">Restore exteriors, driveways, car parks, and building facades with powerful pressure washing. Fast results with minimal disruption.</p>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="process" aria-labelledby="process-heading">
+        <div class="process__inner">
+          <div class="process__header">
+            <p class="section-label">How It Works</p>
+            <h2 class="section-heading" id="process-heading">Simple from start to finish</h2>
+          </div>
+          <div class="process__steps">
+            <div class="step">
+              <div class="step__num" aria-hidden="true">1</div>
+              <h3 class="step__title">Contact Us</h3>
+              <p class="step__desc">Reach out via our contact form, phone, or email with details about your property and cleaning needs.</p>
+            </div>
+            <div class="step">
+              <div class="step__num" aria-hidden="true">2</div>
+              <h3 class="step__title">Receive a Quote</h3>
+              <p class="step__desc">We will assess your requirements and provide a clear, obligation-free quote tailored to your space.</p>
+            </div>
+            <div class="step">
+              <div class="step__num" aria-hidden="true">3</div>
+              <h3 class="step__title">We Get to Work</h3>
+              <p class="step__desc">Our team arrives on schedule and delivers a thorough, professional clean every single time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA banner -->
+      <section class="cta-banner" aria-labelledby="cta-heading">
+        <h2 class="cta-banner__heading" id="cta-heading">Ready for a cleaner workplace?</h2>
+        <p class="cta-banner__body">Contact us today for a free, no-obligation quote on any of our services.</p>
+        <a href="#" class="btn btn--dark" onclick="showPage('contact'); return false;" aria-label="Get in touch with Kaya Property Service">Get in Touch</a>
+      </section>
+
+    </div><!-- end #page-home -->
+
+    <!-- =============================================
+         CONTACT PAGE
+    ============================================= -->
+    <div id="page-contact" class="page">
+
+      <section class="contact-hero" aria-labelledby="contact-heading">
+        <p class="section-label" style="color:var(--orange)">We Would Love to Hear From You</p>
+        <h1 class="contact-hero__heading" id="contact-heading">Request a Quote</h1>
+        <p class="contact-hero__body">Fill in the form below and we will be in touch with a free, tailored quote for your property.</p>
+      </section>
+
+      <section class="contact-section">
+        <div class="contact-section__inner">
+
+          <!-- Contact info -->
+          <aside aria-label="Contact information">
+            <h2 class="contact-info__heading">Get in touch</h2>
+            <ul class="contact-info__items" role="list">
+              <li class="contact-info__item">
+                <div>
+                  <p class="contact-info__label">Mobile</p>
+                  <p class="contact-info__value"><a href="tel:+61430231403">0430 231 403</a></p>
+                </div>
+              </li>
+              <li class="contact-info__item">
+                <div>
+                  <p class="contact-info__label">Email</p>
+                  <p class="contact-info__value"><a href="mailto:kayapropertyservice@yahoo.com">kayapropertyservice@yahoo.com</a></p>
+                </div>
+              </li>
+            </ul>
+            <p class="contact-info__abn">ABN: 06 094 376 76</p>
+          </aside>
+
+          <!-- Contact form (Formspree) -->
+          <div class="form-card">
+            <h2 class="form-card__heading">Send us a message</h2>
+
+            <!--
+              FORMSPREE SETUP:
+              1. Go to https://formspree.io and create a free account.
+              2. Create a new form and copy your unique form ID (looks like: xpzgkrdo).
+              3. Replace YOUR_FORMSPREE_ID below with that ID.
+              The form will then send submissions straight to your email.
+            -->
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+              method="POST"
+              novalidate
+              aria-label="Contact and quote request form"
+            >
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First name <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first_name"
+                    autocomplete="given-name"
+                    required
+                    aria-required="true"
+                    placeholder="Jane"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last name <span aria-hidden="true">*</span></label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="last_name"
+                    autocomplete="family-name"
+                    required
+                    aria-required="true"
+                    placeholder="Smith"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email address <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                  placeholder="jane@example.com.au"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="04XX XXX XXX"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="business">Business or organisation name</label>
+                <input
+                  type="text"
+                  id="business"
+                  name="business_name"
+                  autocomplete="organization"
+                  placeholder="Acme Pty Ltd"
+                />
+              </div>
+
+              <!--
+                SERVICE DROPDOWN
+                To add a service: add a new <option> inside this <select>.
+                To remove a service: delete the relevant <option>.
+              -->
+              <div class="form-group">
+                <label for="service">Service you are interested in <span aria-hidden="true">*</span></label>
+                <select
+                  id="service"
+                  name="service"
+                  required
+                  aria-required="true"
+                >
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="Commercial Cleaning">Commercial Cleaning</option>
+                  <option value="Office Cleaning">Office Cleaning</option>
+                  <option value="Shopping Centre Cleaning">Shopping Centre Cleaning</option>
+                  <option value="Childcare Cleaning">Childcare Cleaning</option>
+                  <option value="Steam Cleaning">Steam Cleaning</option>
+                  <option value="Pressure Washing">Pressure Washing</option>
+                  <option value="Not sure / Other">Not sure / Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Tell us about your property and requirements</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="e.g. Two-storey office building, approx. 800 sqm, looking for a weekly clean..."
+                ></textarea>
+              </div>
+
+              <!-- Honeypot spam field - hidden from real users -->
+              <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1" />
+              <input type="hidden" name="_subject" value="New quote request - Kaya Property Service" />
+
+              <button type="submit" class="form-submit">Send Enquiry</button>
+              <p class="form-notice">We will respond within one business day. Fields marked * are required.</p>
+            </form>
+
+            <div id="form-success" role="alert" aria-live="polite">
+              <div class="success-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+              <h3>Message sent!</h3>
+              <p>Thank you for getting in touch. We will be in contact with your quote within one business day.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- end #page-contact -->
+  </main>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer role="contentinfo">
+    <div class="footer__logo" aria-label="Kaya Property Service">
+      <div class="logo" aria-hidden="true">
+        <span class="logo__name" style="color:var(--white)">KAYA</span>
+        <div class="logo__sweep">
+          <div class="logo__line"></div>
+          <div class="logo__dot"></div>
+        </div>
+        <span class="logo__sub">Property Service</span>
+      </div>
+    </div>
+
+    <nav aria-label="Footer navigation">
+      <ul class="footer__links" role="list">
+        <li><a href="#" class="footer__link" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="#" class="footer__link" onclick="showPage('home'); setTimeout(()=>document.getElementById('services').scrollIntoView({behavior:'smooth'}),80); return false;">Services</a></li>
+        <li><a href="#" class="footer__link" onclick="showPage('contact'); return false;">Contact</a></li>
+        <li><a href="#" class="footer__link" onclick="showPage('contact'); return false;">Get a Quote</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__contact" role="list" aria-label="Contact details">
+      <span class="footer__contact-item" role="listitem">
+        <a href="tel:+61430231403">0430 231 403</a>
+      </span>
+      <span class="footer__contact-item" role="listitem">
+        <a href="mailto:kayapropertyservice@yahoo.com">kayapropertyservice@yahoo.com</a>
+      </span>
+      <span class="footer__contact-item" role="listitem">ABN: 06 094 376 76</span>
+    </div>
+
+    <div class="footer__divider" aria-hidden="true"></div>
+    <p class="footer__copy">
+      &copy; <span id="year"></span> Kaya Property Service. All rights reserved.
+    </p>
+    <p class="footer__powered">Powered by SparkLocal</p>
+  </footer>
+
+  <script>
+    // =============================================
+    // PAGE ROUTING
+    // =============================================
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+
+      // Update nav active state
+      document.getElementById('nav-home').removeAttribute('aria-current');
+      if (name === 'home') document.getElementById('nav-home').setAttribute('aria-current', 'page');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // =============================================
+    // FOOTER YEAR
+    // =============================================
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // =============================================
+    // CONTACT FORM - Formspree submission
+    // =============================================
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          btn.textContent = 'Something went wrong. Please try again.';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Could not send. Please call or email us directly.';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
